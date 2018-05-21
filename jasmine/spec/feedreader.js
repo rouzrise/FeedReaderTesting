@@ -38,7 +38,6 @@ $(function() {
         });
 
         // Ensures the menu changes visibility when the menu icon is clicked.
-        
         it('changes visibility when the menu icon is clicked', function () {
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).not.toBe(true);
@@ -74,7 +73,7 @@ $(function() {
             loadFeed(0, function() {
                 initialHtml = $('.feed').html();
             });
-             //Loads the new feed 
+             //Loads new feed 
             loadFeed(1, done);
         });
 
