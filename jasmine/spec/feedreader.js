@@ -68,21 +68,19 @@ $(function() {
 
         var initialHtml;
 
-        // Loads the feed and assigns the content of first feed to initialHtml
-        // before testing the change of content after loading. 
         beforeEach(function(done) {
+            // Loads the feed and assigns the content of first feed to initialHtml
+            // before testing the change of content after loading. 
             loadFeed(0, function() {
                 initialHtml = $('.feed').html();
-                done();
             });
+             //Loads the new feed 
+            loadFeed(1, done);
         });
 
         // Ensures when a new feed is loaded that the content changes.
         it('ensures to change content when a new feed is loaded', function() {
-            //Loads the new feed to check if the content changed    
-            loadFeed(1, function() {
                 expect($('.feed').html()).not.toBe(initialHtml);  
-            });
         });
     });
 }());
