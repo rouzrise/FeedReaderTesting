@@ -10,13 +10,13 @@ To run the application you should open *index.html* in your browser. Under the m
 ## The tests applied
 
 1. Tests checking that feeds in the `allFeeds` object: 
-1.1 are defined;
-1.2 have URL;
-1.3 have name.
+    1.1. are defined;
+    1.2. have URL;
+    1.3. have name.
 
 2. Tests checking that Menu element: 
-2.1 is hidden by default;
-2.2 changes visibility when the menu icon is clicked.
+    2.1. is hidden by default;
+    2.2. changes visibility when the menu icon is clicked.
 
 3. Test checking that when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
 
