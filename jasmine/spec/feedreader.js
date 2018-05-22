@@ -12,19 +12,19 @@ $(function() {
         // Ensures each feed in the allFeeds object has a URL defined
         // and that the URL is not empty.
         it('have URL', function() {
-            for (var i = 0; i < allFeeds.length; i++) { 
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe('');
-            };
+            allFeeds.forEach(function(feed) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url).not.toBe('');
+            });
         });
 
         // Ensures each feed in the allFeeds object has a name defined
         // and that the name is not empty.
         it('have name', function() {
-            for (var i = 0; i < allFeeds.length; i++) { 
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name).not.toBe('');
-            };
+            allFeeds.forEach(function(feed) {
+                expect(feed.name).toBeDefined();
+                expect(feed.name).not.toBe('');
+            });
         });
     });
 
