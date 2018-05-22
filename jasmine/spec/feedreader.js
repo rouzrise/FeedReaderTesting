@@ -51,7 +51,6 @@ $(function() {
 
     // "Initial Entries" test suite.
     describe('Initial Entries', function() {
-        
         // Loads the feed before testing the presence of .entry element
         beforeEach(function(done) {
             loadFeed(0, done);
@@ -67,14 +66,14 @@ $(function() {
 
     // "New Feed Selection" test suite.
     describe('New Feed Selection', function() {
-
+        var feed = $('.feed');
         var initialHtml;
 
         beforeEach(function(done) {
             // Loads the feed and assigns the content of first feed to initialHtml
             // before testing the change of content after loading. 
             loadFeed(0, function() {
-                initialHtml = $('.feed').html();
+                initialHtml = feed.html();
             });
              //Loads new feed 
             loadFeed(1, done);
@@ -82,7 +81,7 @@ $(function() {
 
         // Ensures when a new feed is loaded that the content changes.
         it('ensures to change content when a new feed is loaded', function() {
-                expect($('.feed').html()).not.toBe(initialHtml);  
+                expect(feed.html()).not.toBe(initialHtml);  
         });
     });
 }());
