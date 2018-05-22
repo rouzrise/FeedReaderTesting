@@ -67,24 +67,28 @@ $(function() {
     // "New Feed Selection" test suite.
     describe('New Feed Selection', function() {
         var feed = $('.feed');
-        var initialHtml;
+        var feed0;
+        var feed1;
 
         beforeEach(function(done) {
             // Loads the feed and assigns the content of first feed to initialHtml
             // before testing the change of content after loading. 
             loadFeed(0, function() {
-                initialHtml = feed.html();
+                //Assigns to variable initial feed's html
+                feed0 = feed.html();
+                //Reloads feed 
+                loadFeed(1, function() {
+                    //Assigns to variable feed's html after reloading
+                    feed1 = feed.html();
+                    done();
+                });
             });
-             //Loads new feed 
-            loadFeed(1, done);
         });
 
         // Ensures when a new feed is loaded that the content changes.
         it('ensures to change content when a new feed is loaded', function() {
-                expect(feed.html()).not.toBe(initialHtml);  
+                expect(feed1).not.toEqual(feed0);  
         });
     });
 }());
 
-//TODO - assign $('.feed') to the variable;
-//refactor last test suite as per reviewer comments;
