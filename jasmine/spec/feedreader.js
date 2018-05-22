@@ -30,7 +30,7 @@ $(function() {
 
     
     // 'The menu' test suite.
-    describe('menu', function() {
+    describe('The menu', function() {
 
         // Ensures the menu element is hidden by default.
         it('is hidden by default', function () {
