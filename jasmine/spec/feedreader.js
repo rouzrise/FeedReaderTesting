@@ -32,17 +32,20 @@ $(function() {
     // 'The menu' test suite.
     describe('The menu', function() {
 
+        var body = $('body');
+        var menuIconLink = $('.menu-icon-link');
+
         // Ensures the menu element is hidden by default.
         it('is hidden by default', function () {
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
         // Ensures the menu changes visibility when the menu icon is clicked.
         it('changes visibility when the menu icon is clicked', function () {
-            $('.menu-icon-link').trigger('click');
-            expect($('body').hasClass('menu-hidden')).not.toBe(true);
-            $('.menu-icon-link').trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            menuIconLink.trigger('click');
+            expect(body.hasClass('menu-hidden')).not.toBe(true);
+            menuIconLink.trigger('click');
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -83,3 +86,6 @@ $(function() {
         });
     });
 }());
+
+//TODO - assign $('.feed') to the variable;
+//refactor last test suite as per reviewer comments;
