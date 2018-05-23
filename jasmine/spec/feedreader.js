@@ -59,8 +59,9 @@ $(function() {
         // Ensures when the loadFeed function is called and completes its 
         // work, there is at least a single .entry element within the .feed 
         // container.
-        it('leaves a single .entry element within the .feed container', function () {    
-            expect($('.feed').find('.entry').length).toBeGreaterThan(0);  
+        it('has at least a single .entry element within the .feed container', function(done) {    
+            expect($('.feed .entry').length).toBeGreaterThan(0);  
+            done();
         });
     });
 
